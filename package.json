@@ -1,0 +1,23 @@
+{
+  "name": "NoteTaker",
+  "version": "1.0.0",
+  "description": "In this unit, we will create our own server-side APIs using the Express.js framework. Express is the most widely used Node.js server framework. It will allow us to quickly and easily establish our API routes and associated HTTP request methods.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Swordspeare09/NoteTaker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Swordspeare09/NoteTaker/issues"
+  },
+  "homepage": "https://github.com/Swordspeare09/NoteTaker#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
