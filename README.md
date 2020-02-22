@@ -1,74 +1,94 @@
-## Description
+# Note Taker
+[![Contributors][contributors-shield]][contributors-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+## Table of Contents
 
-Create an application that can be used to write, save, and delete notes. This application will use an express backend and save and retrieve note data from a JSON file.
+* [About the Project](#about-the-project)
+  * [Built With](#built-with)
+* [Getting Started](#getting-started)
+  * [Prerequisites](#prerequisites)
+  * [Installation](#installation)
+* [Usage](#usage)
+* [Contributing](#contributing)
+* [License](#license)
+* [Contact](#contact)
+* [Acknowledgements](#acknowledgements)
 
-* The application frontend has already been created, it's your job to build the backend and connect the two.
 
-* The following HTML routes should be created:
+## About The Project
 
-  * GET `/notes` - Should return the `notes.html` file.
+This a small web application use to store notes on a simulated Data base. This program makes use of the standard api calls such as POST, GET, and DELETE.
 
-  * GET `*` - Should return the `index.html` file
+### Built With
 
-* The application should have a `db.json` file on the backend that will be used to store and retrieve notes using the `fs` module.
+* [![forthebadge](https://forthebadge.com/images/badges/uses-js.svg)](https://forthebadge.com)
+* [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
 
-* The following API routes should be created:
 
-  * GET `/api/notes` - Should read the `db.json` file and return all saved notes as JSON.
+## Getting Started
 
-  * POST `/api/notes` - Should recieve a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client.
+To get a local copy up and running follow these simple steps that follow.
 
-  * DELETE `/api/notes/:id` - Should recieve a query paramter containing the id of a note to delete. This means you'll need to find a way to give each note a unique `id` when it's saved. In order to delete a note, you'll need to read all notes from the `db.json` file, remove the note with the given `id` property, and then rewrite the notes to the `db.json` file.
+### Prerequisites
 
-## User Story
+This is an example of how to list things you need to use the software and how to install them.
+* npm 
+```sh
+npm install inquirer
+```
+```sh
+npm install axios
+```
 
-AS A user, I want to be able to write and save notes
+### Installation
+ 
+1. Clone the repo
+```sh
+git clone https://github.com/Swordspeare09/NoteTaker
+```
+2. Install NPM packages
+```sh
+npm install
+```
 
-I WANT to be able to delete notes I've written before
+## Usage
 
-SO THAT I can organize my thoughts and keep track of tasks I need to complete
+Whether you are starting a new project, or you are finshing up an applaiction, this ReadMe Generator was built to assist programmers of all calibers in the making of a great markdown file. 
 
-## Business Context
+## Contributing
 
-For users that need to keep track of a lot of information, it's easy to forget or be unable to recall something important. Being able to take persistent notes allows users to have written information available when needed.
+Built and stored on GitHub, the code found in this repo can be expanded and repurposed. Any contributions you make are **greatly appreciated**.
 
-## Acceptance Criteria
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-Application should allow users to create and save notes.
 
-Application should allow users to view previously saved notes.
+## License
 
-Application should allow users to delete previously saved notes.
+None
 
-- - -
+## Contact
 
-## Commit Early and Often
+Francisco J Cortez 
+email: cortez.francisco.j.2009@gmail.com
 
-One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for two reasons:
+Project Link: [https://github.com/Swordspeare09/NoteTaker](https://github.com/Swordspeare09/NoteTaker)
 
-* Your commit history is a signal to employers that you are actively working on projects and learning new skills.
 
-* Your commit history allows you to revert your codebase in the event that you need to return to a previous state.
+## Acknowledgements
 
-Follow these guidelines for committing:
+* [Best-README-Template](https://github.com/othneildrew/Best-README-Template/blob/master/README.md)
+* [Readme Badges – Gotta catch 'em all](https://github.com/boennemann/badges)
+* [Img Shields](https://shields.io)
+* [For the Badge](https://forthebadge.com/)
 
-* Make single-purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits.
 
-* Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history.
 
-* Don't commit half-done work, for the sake of your collaborators (and your future self!).
-
-* Test your application before you commit to ensure functionality at every step in the development process.
-
-We would like you to have well over 200 commits by graduation, so commit early and often!
-
-## Submission on BCS
-
-You are required to submit the following:
-
-* The URL of the deployed application
-
-* The URL of the GitHub repository
-
-- - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+<!-- MARKDOWN LINKS & IMAGES -->
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/franciscojcortez2009/
+[contributors-shield]: https://img.shields.io/github/contributors/Swordspeare09/NoteTaker.svg?style=flat-square
+[contributors-url]: https://github.com/Swordspeare09/NoteTaker/graphs/contributors
