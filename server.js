@@ -45,8 +45,34 @@ app.get("*", function(req, res) {
 })
 
 app.post("/api/notes", function (req, res) {
+
+    var newID = 0;
+    notes.forEach(item => {
+    if (item.id > newID)
+      newID = item.id;
+    })
+    newID++;
+
+    req.body.id = newID;
     notes.push(req.body)
     writeFileAsync("./db/db.json", JSON.stringify(notes))
     console.log("Added new notes!")
 });
 
+//Fucntion used to delete from array of notes
+function arryDelete(arr, value) {
+
+  return arr.filter(function (ele) {
+    return ele.id != value;
+  });
+
+}
+
+app.delete("/api/notes", function(req, res) {
+  let temp = req.body;
+
+  notes = arryDelete(notes, temp);
+
+  writeFileAsync("./db/db.json", JSON.stringify(notes));
+  console.log("Deleted a note...");
+})
