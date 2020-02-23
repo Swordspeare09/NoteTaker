@@ -39,11 +39,6 @@ app.get("/api/notes", function(req, res) {
   res.json(notes);
 });
 
-//Sends you to index.html for unspecified route
-app.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname, "./public/index.html"));
-})
-
 app.post("/api/notes", function (req, res) {
 
     var newID = 0;
@@ -59,20 +54,33 @@ app.post("/api/notes", function (req, res) {
     console.log("Added new notes!")
 });
 
-//Fucntion used to delete from array of notes
-function arryDelete(arr, value) {
+app.delete('/api/notes/:id', function (req, res) {
 
-  return arr.filter(function (ele) {
-    return ele.id != value;
+    console.log(notes.length);
+
+
+    var loc = 0;
+
+    //Loop used for finding the array location of the note object with the corresponding id
+    for(var i = 0; i < notes.length; i++)
+    {
+      if(notes[i].id == req.params.id)
+      {
+        console.log(notes[i]);
+        loc = i;
+        console.log(loc);
+      }
+    }
+
+    notes.splice(loc, 1)
+
+    //wrtiing the new array into the api
+  writeFileAsync("./db/db.json", JSON.stringify(notes))
+
   });
 
-}
 
-app.delete("/api/notes", function(req, res) {
-  let temp = req.body;
-
-  notes = arryDelete(notes, temp);
-
-  writeFileAsync("./db/db.json", JSON.stringify(notes));
-  console.log("Deleted a note...");
+//Sends you to index.html for unspecified route
+app.get("*", function (req, res) {
+  res.sendFile(path.join(__dirname, "./public/index.html"));
 })
